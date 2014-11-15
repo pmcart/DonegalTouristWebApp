@@ -22,10 +22,14 @@
       {
           background-color: yellow;
       }
-  </style>
+      .globalTextColor
+      {
+          color:white;
+      }
+
     
         <!-- Thumbnail Item Skin Begin -->
-            <style>
+    
                 /* jssor slider thumbnail navigator skin 01 css */
                 /*
                 .jssort01 .p           (normal)
@@ -67,9 +71,12 @@
                     height: 70px;
                     border: #fff 1px solid;
                 }
-            </style>
-    
-       <style>
+                
+                 #map_canvas {
+        width: 1000px;
+        height: 600px;
+      }
+       
             /* jssor slider arrow navigator skin 05 css */
             /*
             .jssora05l              (normal)
@@ -93,12 +100,22 @@
             .jssora05r:hover { background-position: -190px -40px; }
             .jssora05ldn { background-position: -250px -40px; }
             .jssora05rdn { background-position: -310px -40px; }
+            .jumbotron{ background-color: transparent;}
+           
+           body { 
+  background: url(img/bundoran1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
         </style>
   
   <body ng-controller="mainController">
     <div class="row">
       <div class="col-md-2">
-        <h3 style="padding:10px;">
+        <h3 style="padding:10px;" class="globalTextColor">
         Pick an Attraction 
         </h3>
         <ul class="list-group" id="attractionsGroup">
@@ -108,10 +125,8 @@
         </ul>
       </div>
       <div class="col-md-10">
-        <h3>{{selectedItem}}</h3>
-        <p>
-          Location
-        </p>
+        <h2 class="globalTextColor" style="padding-left:30px">{{selectedItem}}</h2>
+
         <div class="jumbotron">
           
             
@@ -122,6 +137,7 @@
     </div>
     <div class="panel-body">{{selectedItemWiki}}</div>
 </div>
+            
             
               <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 800px;
         height: 456px; overflow: hidden;">
@@ -159,8 +175,8 @@
             
             </div>
         </div>
-            
-      
+    
+    
         <!-- Arrow Left -->
         <span u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 158px; left: 8px;">
         </span>
@@ -171,6 +187,10 @@
 
         </div>
   
+            <h2 class="globalTextColor" >Map Location</h2>
+                  <div id="map_canvas"></div>
+            
+      
       </div>
 
     </div>
@@ -181,6 +201,7 @@
      <script src="js/jssor.js"></script>
     <script src="js/jssor.slider.js"></script>
       <script src="js/wikipedia.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
       <script src="js/main.js"> </script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
